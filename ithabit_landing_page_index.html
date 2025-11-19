@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ITHABIT — Solutions Numériques Sécurisées</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .reveal { opacity: 0; transform: translateY(20px); transition: all .7s ease; }
+    .reveal.show { opacity: 1; transform: translateY(0); }
+    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.06); }
+  </style>
+</head>
+<body class="bg-[#0A0F1A] text-[#E8EEF6] font-sans antialiased">
+
+<!-- HEADER -->
+<header class="fixed top-0 left-0 right-0 z-50 glass">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="#home" class="flex items-center gap-2">
+      <img src="logo-ithabit.png" alt="Logo ITHABIT" class="h-8 w-8 object-contain" />
+      <span class="font-bold tracking-wide text-lg">ITHABIT</span>
+    </a>
+    <nav class="hidden md:flex space-x-8 text-sm">
+      <a href="#services" class="hover:text-[#1E5EFF]">Services</a>
+      <a href="#why" class="hover:text-[#1E5EFF]">Pourquoi nous</a>
+      <a href="#process" class="hover:text-[#1E5EFF]">Processus</a>
+      
+      <a href="#contact" class="hover:text-[#1E5EFF]">Contact</a>
+    </nav>
+    <a href="#contact" class="px-4 py-2 bg-[#1E5EFF] text-white rounded-lg text-sm">Demander un devis</a>
+  </div>
+</header>
+
+<main class="pt-24">
+
+<!-- HERO -->
+<section class="max-w-7xl mx-auto px-6 py-24">
+  <div class="reveal">
+    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight max-w-3xl">
+      Nous transformons vos idées en <span class="text-[#1E5EFF]">solutions numériques sécurisées.</span>
+    </h1>
+    <p class="mt-6 text-lg text-white/70 max-w-2xl">
+      Développement web, cybersécurité, cloud, IA & data, automatisation : un partenaire unique pour accélérer votre croissance.
+    </p>
+    <a href="#contact" class="inline-block mt-8 px-6 py-3 bg-[#1E5EFF] text-white rounded-lg font-semibold">Demander un devis</a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="py-20 bg-white/5">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center reveal">Nos Services</h2>
+
+    <div class="grid md:grid-cols-3 gap-6 mt-12">
+      <div class="glass p-6 rounded-xl reveal">
+        <h3 class="text-xl font-semibold mb-2">Développement web & applications</h3>
+        <p class="text-white/70 text-sm">Sites vitrines, plateformes, SaaS, applications sur mesure.</p>
+      </div>
+      <div class="glass p-6 rounded-xl reveal">
+        <h3 class="text-xl font-semibold mb-2">Cybersécurité</h3>
+        <p class="text-white/70 text-sm">Audit, pentest, sécurisation infrastructure & dev.</p>
+      </div>
+      <div class="glass p-6 rounded-xl reveal">
+        <h3 class="text-xl font-semibold mb-2">Cloud & DevOps</h3>
+        <p class="text-white/70 text-sm">CI/CD, conteneurisation, optimisation coût & performance.</p>
+      </div>
+      <div class="glass p-6 rounded-xl reveal">
+        <h3 class="text-xl font-semibold mb-2">Data & Intelligence Artificielle</h3>
+        <p class="text-white/70 text-sm">Dashboards, modèles IA, automatisation décisionnelle.</p>
+      </div>
+      <div class="glass p-6 rounded-xl reveal">
+        <h3 class="text-xl font-semibold mb-2">Automatisation de processus</h3>
+        <p class="text-white/70 text-sm">Workflows automatisés, intégrations API, robots logiciels.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why" class="py-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center reveal">Pourquoi nous choisir</h2>
+
+    <div class="grid md:grid-cols-4 gap-6 mt-12">
+      <div class="glass p-6 rounded-xl text-center reveal">
+        <h3 class="font-semibold">Expertise</h3>
+        <p class="text-white/70 text-sm mt-2">Expérience senior sur projets critiques.</p>
+      </div>
+      <div class="glass p-6 rounded-xl text-center reveal">
+        <h3 class="font-semibold">Sécurité</h3>
+        <p class="text-white/70 text-sm mt-2">Cybersécurité intégrée à chaque étape.</p>
+      </div>
+      <div class="glass p-6 rounded-xl text-center reveal">
+        <h3 class="font-semibold">Accompagnement</h3>
+        <p class="text-white/70 text-sm mt-2">Disponibilité, pédagogie, suivi constant.</p>
+      </div>
+      <div class="glass p-6 rounded-xl text-center reveal">
+        <h3 class="font-semibold">Résultats</h3>
+        <p class="text-white/70 text-sm mt-2">Des livrables concrets, mesurables et efficaces.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="py-20 bg-white/5">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center reveal">Processus de travail</h2>
+
+    <div class="grid md:grid-cols-6 gap-6 mt-12 text-center">
+      <div class="glass p-4 rounded-lg reveal"><strong>01</strong><p class="text-white/70 text-sm">Analyse</p></div>
+      <div class="glass p-4 rounded-lg reveal"><strong>02</strong><p class="text-white/70 text-sm">Design</p></div>
+      <div class="glass p-4 rounded-lg reveal"><strong>03</strong><p class="text-white/70 text-sm">Développement</p></div>
+      <div class="glass p-4 rounded-lg reveal"><strong>04</strong><p class="text-white/70 text-sm">Sécurité</p></div>
+      <div class="glass p-4 rounded-lg reveal"><strong>05</strong><p class="text-white/70 text-sm">Tests</p></div>
+      <div class="glass p-4 rounded-lg reveal"><strong>06</strong><p class="text-white/70 text-sm">Déploiement</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-20 bg-white/5">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center reveal">Contact / Demander un devis</h2>
+
+    <form class="mt-12 glass p-6 rounded-xl grid gap-4 reveal" onsubmit="event.preventDefault(); alert('Message envoyé !');">
+      <input class="bg-white/10 p-3 rounded-lg" placeholder="Nom" required />
+      <input class="bg-white/10 p-3 rounded-lg" placeholder="Email" type="email" required />
+      <input class="bg-white/10 p-3 rounded-lg" placeholder="Société" />
+      <textarea class="bg-white/10 p-3 rounded-lg" rows="5" placeholder="Message" required></textarea>
+      <button class="py-3 rounded-lg bg-[#1E5EFF]">Envoyer</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-8 text-center text-white/50 text-sm">
+  © ITHABIT — Tous droits réservés
+</footer>
+
+<script>
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); });
+},{threshold:0.2});
+
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
