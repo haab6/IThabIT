@@ -5,7 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ITHABIT — Solutions Numériques Sécurisées</title>
+  <link rel="icon" type="image/png" href="/logo-ithabit.png">
   <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <style>
     html {
       scroll-behavior: smooth;
@@ -26,8 +28,306 @@
       background: rgba(255, 255, 255, 0.03);
       backdrop-filter: blur(8px);
       border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: all 0.3s ease;
     }
+
+    .glass:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(30, 94, 255, 0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(30, 94, 255, 0.1);
+    }
+
+        /* --- Barre Tech Premium avec hover slow + color glow --- */
+
+    .tech-pill {
+      min-width: 140px;
+      padding: 0.75rem 1.2rem;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      white-space: nowrap;
+      transition: 0.3s ease;
+      cursor: default;
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    .tech-pill:nth-child(2n) {
+      animation-delay: 0.3s;
+    }
+
+    .tech-pill:nth-child(3n) {
+      animation-delay: 0.6s;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.85; }
+    }
+
+    .tech-pill img {
+      height: 22px;
+      width: 22px;
+      opacity: 0.9;
+      filter: drop-shadow(0 0 4px rgba(30, 94, 255, 0.5));
+      transition: 0.3s ease;
+    }
+
+    /* Hover : changement de couleur + glow */
+    .tech-pill:hover img {
+      filter: drop-shadow(0 0 10px rgba(30, 150, 255, 0.9));
+      opacity: 1;
+      transform: scale(1.15) rotate(5deg);
+    }
+
+    .tech-pill:hover {
+      background: rgba(30, 94, 255, 0.15);
+      border-color: rgba(30, 94, 255, 0.35);
+      transform: translateY(-2px);
+    }
+
+    /* Wrapper */
+    .marquee-wrapper {
+      position: relative;
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+    }
+
+    /* Animation */
+    .marquee-track {
+      display: flex;
+      gap: 1.5rem;
+      width: max-content;
+      animation: marquee 28s linear infinite;
+    }
+
+    /* Bande dupliquée */
+    .marquee-track.second {
+      animation-delay: -14s;
+    }
+
+    /* Hover : ralentissement de l’animation */
+    .marquee-wrapper:hover .marquee-track {
+      animation-play-state: paused;
+      transition: 0.3s;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Animations pour boutons et liens */
+    a[href="#contact"], button {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    a[href="#contact"]:hover, button:hover {
+      background: linear-gradient(135deg, #1E5EFF, #2A7FFF) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(30, 94, 255, 0.4);
+    }
+
+    /* Animation pour les services */
+    #services .glass {
+      animation: slideUp 0.6s ease backwards;
+    }
+
+    #services .glass:nth-child(1) { animation-delay: 0.1s; }
+    #services .glass:nth-child(2) { animation-delay: 0.2s; }
+    #services .glass:nth-child(3) { animation-delay: 0.3s; }
+    #services .glass:nth-child(4) { animation-delay: 0.4s; }
+    #services .glass:nth-child(5) { animation-delay: 0.5s; }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Animation pour "Pourquoi nous" */
+    #why .glass {
+      animation: fadeInScale 0.6s ease backwards;
+    }
+
+    #why .glass:nth-child(1) { animation-delay: 0.1s; }
+    #why .glass:nth-child(2) { animation-delay: 0.2s; }
+    #why .glass:nth-child(3) { animation-delay: 0.3s; }
+    #why .glass:nth-child(4) { animation-delay: 0.4s; }
+
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Animation pour le processus */
+    #process .glass {
+      animation: slideRight 0.6s ease backwards;
+      position: relative;
+    }
+
+    #process .glass:nth-child(1) { animation-delay: 0.1s; }
+    #process .glass:nth-child(2) { animation-delay: 0.2s; }
+    #process .glass:nth-child(3) { animation-delay: 0.3s; }
+    #process .glass:nth-child(4) { animation-delay: 0.4s; }
+    #process .glass:nth-child(5) { animation-delay: 0.5s; }
+    #process .glass:nth-child(6) { animation-delay: 0.6s; }
+
+    @keyframes slideRight {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Ligne connectant les étapes */
+    #process .glass::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -1.5rem;
+      width: 1rem;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(30, 94, 255, 0.5), transparent);
+      transform: translateY(-50%);
+    }
+
+    #process .glass:last-child::before {
+      display: none;
+    }
+
+    /* Animation du formulaire */
+    form input, form textarea {
+      transition: all 0.3s ease;
+    }
+
+    form input:focus, form textarea:focus {
+      background: rgba(30, 94, 255, 0.2) !important;
+      border: 1px solid rgba(30, 94, 255, 0.5) !important;
+      outline: none;
+      box-shadow: 0 0 20px rgba(30, 94, 255, 0.2);
+      transform: scale(1.02);
+    }
+
+    /* Animation du titre */
+    h1 {
+      animation: fadeInUp 0.8s ease;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Dégradé sur le texte bleu du titre */
+    h1 span {
+      position: relative;
+      background: linear-gradient(135deg, #1E5EFF, #2A7FFF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Coloriser tous les logos en bleu #1E5EFF */
+    .tech-pill img {
+      filter: brightness(0) saturate(100%) invert(32%) sepia(100%) saturate(600%) hue-rotate(180deg) brightness(1.1) drop-shadow(0 0 4px rgba(30, 94, 255, 0.5));
+    }
+    
+    .tech-pill:hover img {
+      filter: brightness(0) saturate(100%) invert(32%) sepia(100%) saturate(600%) hue-rotate(180deg) brightness(1.1) drop-shadow(0 0 10px rgba(30, 150, 255, 0.9));
+    }
+
+      /* Sticky CTA */
+      #sticky-cta {
+        position: fixed;
+        right: 22px;
+        bottom: 22px;
+        background: linear-gradient(135deg,#1E5EFF,#2A7FFF);
+        color: white;
+        padding: 0.75rem 1rem;
+        border-radius: 9999px;
+        box-shadow: 0 12px 30px rgba(30,94,255,0.18);
+        z-index: 60;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: transform .18s ease, box-shadow .18s ease, opacity .2s ease;
+      }
+
+      #sticky-cta:hover { transform: translateY(-4px) scale(1.01); box-shadow: 0 18px 36px rgba(30,94,255,0.24); }
+
+      #sticky-cta svg { width: 18px; height: 18px; }
+
+      /* Testimonials */
+      .testimonial-card {
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.04);
+        padding: 1.25rem;
+        border-radius: 12px;
+        transition: transform .25s ease, box-shadow .25s ease;
+      }
+      .testimonial-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.45); }
+      .testimonial-quote { font-style: italic; color: rgba(232,238,246,0.8); }
+      .testimonial-author { margin-top: .75rem; font-weight: 600; color: #E8EEF6; }
   </style>
+  <!-- Open Graph / Twitter Card / JSON-LD -->
+  <meta name="description" content="ITHABIT — Solutions numériques sécurisées : développement web, cybersécurité, cloud, IA & data, automatisation.">
+  <link rel="canonical" href="https://www.ithabit.com/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ITHABIT — Solutions Numériques Sécurisées">
+  <meta property="og:description" content="Développement web, cybersécurité, cloud, IA & data, automatisation — un partenaire unique pour accélérer votre croissance.">
+  <meta property="og:image" content="https://www.ithabit.com/logo-ithabit.png">
+  <meta property="og:url" content="https://www.ithabit.com/">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ITHABIT — Solutions Numériques Sécurisées">
+  <meta name="twitter:description" content="Développement web, cybersécurité, cloud, IA & data, automatisation — un partenaire unique pour accélérer votre croissance.">
+  <meta name="twitter:image" content="https://www.ithabit.com/logo-ithabit.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ITHABIT",
+    "url": "https://www.ithabit.com",
+    "logo": "https://www.ithabit.com/logo-ithabit.png",
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "email": "contact@ithabit.com",
+      "availableLanguage": ["French","English"]
+    }]
+  }
+  </script>
 </head>
 
 <body class="bg-[#0A0F1A] text-[#E8EEF6] font-sans antialiased">
@@ -54,16 +354,22 @@
 
     <!-- HERO -->
     <section class="max-w-7xl mx-auto px-6 py-24">
-      <div class="reveal">
-        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight max-w-3xl">
-          Nous transformons vos idées en <span class="text-[#1E5EFF]">solutions numériques sécurisées.</span>
-        </h1>
-        <p class="mt-6 text-lg text-white/70 max-w-2xl">
-          Développement web, cybersécurité, cloud, IA & data, automatisation : un partenaire unique pour accélérer votre
-          croissance.
-        </p>
-        <a href="#contact" class="inline-block mt-8 px-6 py-3 bg-[#1E5EFF] text-white rounded-lg font-semibold">Demander
-          un devis</a>
+      <div class="reveal flex flex-col md:flex-row items-center gap-8">
+        <div class="md:w-1/2">
+          <h1 class="text-4xl md:text-6xl font-extrabold leading-tight max-w-3xl">
+            Nous transformons vos idées en <span class="text-[#1E5EFF]">solutions numériques sécurisées.</span>
+          </h1>
+          <p class="mt-6 text-lg text-white/70 max-w-2xl">
+            Développement web, cybersécurité, cloud, IA & data, automatisation : un partenaire unique pour accélérer votre
+            croissance.
+          </p>
+          <a href="#contact" class="inline-block mt-8 px-6 py-3 bg-[#1E5EFF] text-white rounded-lg font-semibold">Demander
+            un devis</a>
+        </div>
+
+        <div class="md:w-1/2 flex justify-center">
+          <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_jcikwtux.json" background="transparent" speed="1" loop autoplay aria-label="Illustration animée" style="width:320px; height:320px;"></lottie-player>
+        </div>
       </div>
     </section>
 
@@ -151,6 +457,128 @@
       </div>
     </section>
 
+        <!-- TECH / STACK -->
+    <section class="py-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center reveal">Outils & Technologies</h2>
+
+        <div class="marquee-wrapper mt-10">
+          
+          <!-- Bande 1 -->
+          <div class="marquee-track">
+
+            <div class="tech-pill">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/terraform.svg" alt="Terraform">
+              <span>Terraform</span>
+            </div>
+
+            <div class="tech-pill">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/kubernetes.svg" alt="Kubernetes">
+              <span>Kubernetes</span>
+            </div>
+
+            <div class="tech-pill">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/ansible.svg" alt="Ansible">
+              <span>Ansible</span>
+            </div>
+
+            <div class="tech-pill">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/jenkins.svg" alt="Jenkins">
+              <span>Jenkins</span>
+            </div>
+
+            <div class="tech-pill">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gitlab.svg" alt="GitLab">
+              <span>GitLab</span>
+            </div>
+
+            <div class="tech-pill">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" alt="GitHub">
+              <span>GitHub</span>
+            </div>
+
+            <div class="tech-pill">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonaws.svg" alt="AWS">
+              <span>AWS</span>
+            </div>
+
+            <div class="tech-pill">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoftazure.svg" alt="Azure">
+              <span>Azure</span>
+            </div>
+
+            <div class="tech-pill">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/docker.svg" alt="Docker">
+              <span>Docker</span>
+            </div>
+
+            <div class="tech-pill">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/elasticsearch.svg" alt="ELK">
+              <span>ELK Stack</span>
+            </div>
+          </div>
+
+          <!-- Bande 2 (dupliquée pour effet infini) -->
+          <div class="marquee-track second" aria-hidden="true">
+
+            <div class="tech-pill">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/terraform.svg" alt="Terraform">
+              <span>Terraform</span>
+            </div>
+
+            <div class="tech-pill">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/kubernetes.svg" alt="Kubernetes">
+              <span>Kubernetes</span>
+            </div>
+
+            <div class="tech-pill">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/ansible.svg" alt="Ansible">
+              <span>Ansible</span>
+            </div>
+
+            <div class="tech-pill">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/jenkins.svg" alt="Jenkins">
+              <span>Jenkins</span>
+            </div>
+
+            <div class="tech-pill">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gitlab.svg" alt="GitLab">
+              <span>GitLab</span>
+            </div>
+
+            <div class="tech-pill">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" alt="GitHub">
+              <span>GitHub</span>
+            </div>
+
+            <div class="tech-pill">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonaws.svg" alt="AWS">
+              <span>AWS</span>
+            </div>
+
+            <div class="tech-pill">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoftazure.svg" alt="Azure">
+              <span>Azure</span>
+            </div>
+
+            <div class="tech-pill">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/docker.svg" alt="Docker">
+              <span>Docker</span>
+            </div>
+
+            <div class="tech-pill">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/elasticsearch.svg" alt="ELK">
+              <span>ELK Stack</span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials removed (no real testimonials yet) -->
+
     <!-- CONTACT -->
     <section id="contact" class="py-20 bg-white/5">
       <div class="max-w-4xl mx-auto px-6">
@@ -181,6 +609,13 @@
     <footer class="py-8 text-center text-white/50 text-sm">
       © ITHABIT — Tous droits réservés
     </footer>
+
+  <a id="sticky-cta" href="#contact" aria-label="Demander un devis">
+    Demander un devis
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M5 12h14M13 5l7 7-7 7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
 
     <script>
       const io = new IntersectionObserver((entries) => {
